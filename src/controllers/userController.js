@@ -56,10 +56,16 @@ export const signIn = async (req, res, next) => {
       });
     }
 
+    // res.cookie("userToken", response.token, {
+    //   httpOnly: true,
+    //   samesite: "Strict",
+    //   maxAge: 14 * 24 * 60 * 60 * 1000,
+    // });
     res.cookie("userToken", response.token, {
-      httpOnly: true,
-      samesite: "Strict",
-      maxAge: 14 * 24 * 60 * 60 * 1000,
+      httpOnly: true, 
+      sameSite: "None", 
+      secure: true, 
+      maxAge: 14 * 24 * 60 * 60 * 1000, 
     });
 
     res.status(HttpStatusCode.OK).json({
