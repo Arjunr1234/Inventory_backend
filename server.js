@@ -8,7 +8,7 @@ import userRoute from './src/routes/userRoute.js';
 
 
 
-const origin = 'https://inventory-frontend-ivory.vercel.app/'
+const origin = 'https://inventory-frontend-ivory.vercel.app'
 //const origin:'http://localhost:5173',
 dotenv.config(); 
 const port = process.env.PORT || 5000; 
