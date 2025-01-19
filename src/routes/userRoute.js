@@ -11,7 +11,7 @@ userRoute.post('/add-customer',verify, addCustomer);
 userRoute.post('/add-product',verify, addProduct);
 userRoute.post('/generate-bill', verify, billingProduct);
 
-userRoute.get('/get-all-customers',verify, getAllCustomers);
+userRoute.get('/get-all-customers', getAllCustomers);
 userRoute.get('/get-all-products',verify, getAllProducts);
 userRoute.get('/sales-report', verify, getSalesReport);
 userRoute.get('/customer-ledger', verify, getCustomerLedger);
