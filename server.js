@@ -8,14 +8,15 @@ import userRoute from './src/routes/userRoute.js';
 
 
 
-
+const origin = 'https://inventory-frontend-ivory.vercel.app/'
+//const origin:'http://localhost:5173',
 dotenv.config(); 
 const port = process.env.PORT || 5000; 
 
 const app = express();
 connectDB();
 const corsOption = {
-    origin:'http://localhost:5173',
+    origin:origin,
     credentials:true
 }
 app.use(cors(corsOption));
