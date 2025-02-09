@@ -93,13 +93,13 @@ export const addCustomerRepo = async(userId, data) => {
 
 export const addProductRepo = async (userId, data) => {
   try {
-    const { product, quantity, price, descripiton } = data;
-    
+    const { product, quantity, price, description } = data;
+    console.log("Second data: ", data)
 
     const createProduct = await productModel.create({
       userId,
       product,
-      description: descripiton,
+      description,
       quantity: parseInt(quantity),
       price: parseInt(price),
     });
@@ -115,6 +115,8 @@ export const addProductRepo = async (userId, data) => {
       quantity: createProduct.quantity,
       price: createProduct.price,
     };
+    console.log(productData);
+    
     return { success: true, product: productData };
   } catch (error) {
     console.log("Error in product repo: ", error);

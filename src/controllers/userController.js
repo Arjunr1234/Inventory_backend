@@ -107,9 +107,11 @@ export const addCustomer = async (req, res, next) => {
 export const addProduct = async (req, res, next) => {
   try {
     const userId = req.roleId; 
-    const { product, descripiton, quantity, price } = req.body;
-    const data = { product, descripiton, quantity, price };
-
+    console.log(req.body)
+    const { product, description, quantity, price } = req.body;
+    const data = { product, description, quantity, price };
+     console.log(data);
+     
     const response = await addProductService(userId, data);
    // console.log("This is respose; ", response)
     if (!response.success) {
@@ -207,6 +209,10 @@ export const billingProduct = async(req, res, next) => {
    }
 }
 
+export const sampleCheck = () => {
+   console.log("This is sample");
+   
+}
 export const getSalesReport = async(req, res, next) => {
     try {
        
